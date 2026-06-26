@@ -1,0 +1,3120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious Gems Company | Luxury Gemstones & Handmade Jewellery Since 1942</title>
+    <meta name="description" content="Manufacturers and Exporters of Handmade Jewellery and Natural Gemstones. Sourcing and crafting the finest Ceylon Sapphires, Rubies, and Diamonds in Colombo, Sri Lanka since 1942.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Dark Theme Colors (Default) */
+            --bg-primary: #0a0b0d;
+            --bg-secondary: #121418;
+            --bg-tertiary: #191c21;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --gold-primary: #D4AF37;
+            --gold-secondary: #C5A880;
+            --gold-dark: #aa8416;
+            --gold-light: #f3e5ab;
+            --sapphire-blue: #0f52ba;
+            --emerald-green: #50c878;
+            --ruby-red: #e0115f;
+            --border-color: rgba(212, 175, 55, 0.15);
+            --border-color-strong: rgba(212, 175, 55, 0.35);
+            --header-bg: rgba(10, 11, 13, 0.85);
+            --card-shadow: rgba(0, 0, 0, 0.6);
+            --overlay-bg: rgba(10, 11, 13, 0.95);
+            --input-bg: #16181d;
+            
+            /* UI Settings */
+            --transition-speed: 0.3s;
+            --border-radius: 4px;
+        }
+
+        /* Light Theme Colors */
+        body.light-mode {
+            --bg-primary: #fcfbf7;
+            --bg-secondary: #f6f3eb;
+            --bg-tertiary: #edeae2;
+            --text-primary: #1c1d1f;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --gold-primary: #c59b27;
+            --gold-secondary: #a88523;
+            --gold-dark: #8c6a18;
+            --gold-light: #fbf5df;
+            --border-color: rgba(197, 155, 39, 0.2);
+            --border-color-strong: rgba(197, 155, 39, 0.4);
+            --header-bg: rgba(252, 251, 247, 0.88);
+            --card-shadow: rgba(0, 0, 0, 0.08);
+            --overlay-bg: rgba(252, 251, 247, 0.96);
+            --input-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            transition: all var(--transition-speed);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed), border-color var(--transition-speed);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold-primary);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-primary);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .control-btn {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            color: var(--gold-primary);
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+
+        .admin-trigger-btn {
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: var(--border-radius);
+        }
+
+        .admin-trigger-btn:hover {
+            background-color: var(--gold-primary);
+            color: #000000;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        body.light-mode .hero {
+            background: linear-gradient(rgba(252, 251, 247, 0.4), rgba(252, 251, 247, 0.55)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 0 1rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-pretitle {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        body.light-mode .hero-title {
+            color: #121418;
+            text-shadow: 0 4px 15px rgba(252, 251, 247, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        body.light-mode .hero-subtitle {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border-radius: var(--border-radius);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--gold-primary);
+            color: #0a0b0d;
+            border: 1px solid var(--gold-primary);
+        }
+
+        body.light-mode .btn-primary {
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--gold-primary);
+        }
+
+        body.light-mode .btn-primary:hover {
+            color: var(--gold-primary);
+        }
+
+        .btn-outline {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+
+        body.light-mode .btn-outline {
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: #ffffff;
+            color: #0a0b0d;
+        }
+
+        body.light-mode .btn-outline:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .hero-scroll-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        /* --- Legacy Section --- */
+        .legacy {
+            padding: 8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .legacy-image-container {
+            position: relative;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+        }
+
+        .legacy-image-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px dashed var(--border-color);
+            pointer-events: none;
+        }
+
+        .legacy-image {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            filter: grayscale(15%);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-pretitle {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .legacy-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .legacy-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* --- Collections Showcase Section --- */
+        .collections {
+            padding: 8rem 0;
+            background-color: var(--bg-secondary);
+            transition: background-color var(--transition-speed);
+        }
+
+        .collections-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3.5rem;
+            gap: 2rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .filter-btn {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            position: relative;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--gold-primary);
+        }
+
+        .filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold-primary);
+        }
+
+        .search-sort-bar {
+            display: flex;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .search-box {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.8rem 1.2rem 0.8rem 2.8rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .sort-select {
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.8rem 1.5rem;
+            font-size: 0.85rem;
+            font-family: inherit;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        /* --- Catalog Grid & Cards --- */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            transition: all var(--transition-speed);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        body.light-mode .product-card:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-image-box {
+            position: relative;
+            padding-bottom: 100%; /* Square aspect ratio */
+            overflow: hidden;
+            background-color: var(--bg-tertiary);
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .product-card:hover .card-image {
+            transform: scale(1.06);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(10, 11, 13, 0.85);
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(4px);
+        }
+
+        .card-details {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .card-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .spec-tag {
+            background-color: var(--bg-tertiary);
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            margin-top: auto;
+        }
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .card-btn {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.8rem 0;
+            text-align: center;
+            border-radius: var(--border-radius);
+        }
+
+        .card-btn-primary {
+            background-color: var(--gold-primary);
+            color: #0a0b0d;
+            border: 1px solid var(--gold-primary);
+        }
+
+        body.light-mode .card-btn-primary {
+            color: #ffffff;
+        }
+
+        .card-btn-primary:hover {
+            background-color: transparent;
+            color: var(--gold-primary);
+        }
+
+        .card-btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .card-btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 5rem 2rem;
+            border: 1px dashed var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Interactive Showcase / Featured Video/Section --- */
+        .showcase-banner {
+            padding: 10rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .showcase-banner-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold-primary);
+        }
+
+        .showcase-banner-text {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 8rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.4rem;
+            color: var(--gold-primary);
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+            flex-shrink: 0;
+        }
+
+        .contact-method-details h4 {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-method-details p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-form {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px var(--card-shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.9rem 1.2rem;
+            font-size: 0.9rem;
+            font-family: inherit;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.15);
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #050608;
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 3rem;
+            color: #9ca3af;
+        }
+
+        body.light-mode footer {
+            background-color: #edeae2;
+            color: #4b5563;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.15em;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            max-width: 380px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .social-link {
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-speed);
+        }
+
+        .social-link:hover {
+            color: var(--gold-primary);
+            border-color: var(--gold-primary);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .footer-links h4 {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        /* --- Modals (Common & Product Details) --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color-strong);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            z-index: 10;
+            animation: modalScaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body.light-mode .modal-content {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            background-color: var(--bg-secondary);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--gold-primary);
+            border-color: var(--gold-primary);
+            transform: rotate(90deg);
+        }
+
+        /* Product Details Modal Layout */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .details-image-box {
+            position: relative;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .details-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .details-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .details-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .details-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .details-desc-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .details-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .details-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2.5rem;
+        }
+
+        .details-specs-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .details-specs-table td {
+            padding: 0.75rem 0;
+            font-size: 0.85rem;
+        }
+
+        .details-specs-table td.spec-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            width: 40%;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+        }
+
+        .details-specs-table td.spec-val {
+            color: var(--text-primary);
+        }
+
+        .details-inquire-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* --- Admin Vault Authentication Modal --- */
+        .vault-modal {
+            max-width: 450px;
+        }
+
+        .vault-content {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .vault-icon {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .vault-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .vault-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .vault-input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .vault-input-group input {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1.1rem;
+            font-family: inherit;
+            letter-spacing: 0.3em;
+            text-align: center;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed);
+        }
+
+        .vault-input-group input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        .vault-input-group i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .vault-error {
+            color: var(--ruby-red);
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .vault-submit-btn {
+            width: 100%;
+        }
+
+        /* --- SUCCESS ALERT NOTIFICATION --- */
+        .alert-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--gold-primary);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 300;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .alert-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .alert-toast i {
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+        }
+
+        /* --- Admin Dashboard Layout --- */
+        .admin-dashboard-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-primary);
+            z-index: 150;
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .admin-dashboard-overlay.active {
+            display: flex;
+        }
+
+        .admin-header {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .admin-title-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-title-box i {
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+        }
+
+        .admin-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .admin-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-logout-btn {
+            border: 1px solid var(--text-muted);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: var(--border-radius);
+        }
+
+        .admin-logout-btn:hover {
+            border-color: var(--ruby-red);
+            color: var(--ruby-red);
+        }
+
+        .admin-content {
+            padding: 3rem;
+            flex-grow: 1;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Admin Stats Bar */
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .admin-stat-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .admin-stat-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius);
+        }
+
+        .admin-stat-data h5 {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .admin-stat-data p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Admin Workspace Split */
+        .admin-tabs-nav {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .admin-tab-btn {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .admin-tab-btn.active {
+            color: var(--gold-primary);
+        }
+
+        .admin-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold-primary);
+        }
+
+        .admin-tab-pane {
+            display: none;
+        }
+
+        .admin-tab-pane.active {
+            display: block;
+        }
+
+        /* Admin Controls Bar */
+        .admin-pane-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-pane-title {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .admin-pane-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .admin-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-btn-gold {
+            background-color: var(--gold-primary);
+            color: #000000;
+        }
+
+        .admin-btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        .admin-btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .admin-btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        /* Database Tables Styling */
+        .admin-table-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .admin-table th {
+            background-color: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .admin-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            vertical-align: middle;
+        }
+
+        .admin-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .admin-table tr:hover td {
+            background-color: rgba(212, 175, 55, 0.02);
+            color: var(--text-primary);
+        }
+
+        .admin-table-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+        }
+
+        .admin-table-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .admin-table-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .admin-action-btn {
+            font-size: 0.9rem;
+            padding: 0.4rem;
+            color: var(--text-muted);
+            border-radius: 50%;
+        }
+
+        .admin-action-btn:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        .admin-action-edit:hover {
+            color: var(--gold-primary);
+        }
+
+        .admin-action-delete:hover {
+            color: var(--ruby-red);
+        }
+
+        .admin-action-reply:hover {
+            color: var(--emerald-green);
+        }
+
+        /* Admin Form Modal (Dynamic popup inside admin panel) */
+        .form-modal {
+            max-width: 650px;
+        }
+
+        .image-preview-box {
+            width: 120px;
+            height: 120px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bg-primary);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .image-preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .file-upload-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .file-upload-btn {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px dashed var(--border-color-strong);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-radius: var(--border-radius);
+        }
+
+        .file-upload-btn:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Database Backup Panel */
+        .backup-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .backup-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .backup-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .backup-code-box {
+            width: 100%;
+            height: 150px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--gold-light);
+            font-family: monospace;
+            padding: 1rem;
+            font-size: 0.8rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            resize: none;
+        }
+
+        .backup-code-box:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        /* Inquiry details styling */
+        .inquiry-sender {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .inquiry-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .inquiry-msg {
+            max-width: 400px;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalScaleUp {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 1024px) {
+            .legacy-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .legacy-image {
+                height: 380px;
+            }
+            .admin-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                height: 80px;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                gap: 2rem;
+                transition: left var(--transition-speed);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            /* Full-screen modals on mobile for app-like luxury feel */
+            .modal {
+                padding: 0;
+            }
+            .modal-content {
+                max-height: 100vh;
+                height: 100vh;
+                border: none;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            .modal-close-btn {
+                top: 15px;
+                right: 15px;
+                background-color: rgba(10, 11, 13, 0.6);
+                backdrop-filter: blur(8px);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            body.light-mode .modal-close-btn {
+                background-color: rgba(252, 251, 247, 0.6);
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+            .details-grid {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+            .details-image-box {
+                min-height: 250px;
+                height: 40vh;
+                flex-shrink: 0;
+            }
+            .details-info {
+                padding: 1.5rem;
+                overflow-y: auto;
+                flex-grow: 1;
+            }
+            .details-title {
+                font-size: 1.6rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .admin-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .admin-header {
+                padding: 1.2rem 1.5rem;
+            }
+            .admin-title {
+                font-size: 1rem;
+            }
+            .admin-content {
+                padding: 1.5rem;
+            }
+            .admin-pane-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            /* Responsive tables and panels in admin dashboard */
+            .admin-table th, .admin-table td {
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
+            .admin-table-img {
+                width: 40px;
+                height: 40px;
+            }
+            .inquiry-msg {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.1rem;
+                letter-spacing: 0.08em;
+            }
+            .hero-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 2rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .nav-container {
+                padding: 0 1rem;
+            }
+            .catalog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .legacy {
+                padding: 4rem 0;
+            }
+            .collections {
+                padding: 4rem 0;
+            }
+            .contact {
+                padding: 4rem 0;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+            .admin-stats {
+                grid-template-columns: 1fr;
+            }
+            .admin-content {
+                padding: 1rem 0.5rem;
+            }
+            .admin-tabs-nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .admin-tab-btn {
+                font-size: 0.7rem;
+                padding: 0.5rem 0.5rem;
+            }
+            .admin-pane-actions {
+                width: 100%;
+            }
+            .admin-pane-actions .admin-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SUCCESS ALERT NOTIFICATION -->
+    <div id="alertToast" class="alert-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="alertMessage">Action completed successfully.</span>
+    </div>
+
+    <!-- --- Header & Navigation --- -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo" id="mainLogo">
+                <span class="logo-main">Precious Gems</span>
+                <span class="logo-sub">Company • Colombo</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#legacy" class="nav-link" onclick="closeMobileMenu()">Legacy</a></li>
+                <li><a href="#collections" class="nav-link" onclick="closeMobileMenu()">Collections</a></li>
+                <li><a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contact</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="control-btn" id="themeToggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Hero Section --- -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-pretitle">ESTABLISHED 1942</span>
+            <h1 class="hero-title">PRECIOUS GEMS<br>COMPANY</h1>
+            <p class="hero-subtitle">Manufacturers & Exporters of Handmade Fine Jewellery and Certified Natural Ceylon Gemstones.</p>
+            <div class="hero-buttons">
+                <a href="#collections" class="btn btn-primary">Explore Gems</a>
+                <a href="#contact" class="btn btn-outline">Book Consultation</a>
+            </div>
+        </div>
+        <a href="#legacy" class="hero-scroll-btn" aria-label="Scroll Down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- --- Legacy Section --- -->
+    <section class="legacy" id="legacy">
+        <div class="container">
+            <div class="legacy-grid">
+                <div class="legacy-image-container">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Exquisite Jewelry Sourcing" class="legacy-image">
+                </div>
+                <div class="legacy-details-box">
+                    <div class="section-header">
+                        <span class="section-pretitle">OUR HERITAGE</span>
+                        <h2 class="section-title">Eight Decades of Exquisite Artistry</h2>
+                    </div>
+                    <p class="legacy-text">
+                        Founded in 1942 in Colombo, Sri Lanka (formerly Ceylon, the world's legendary "Island of Gems"), Precious Gems Company has maintained a global reputation for importing, cutting, and exporting premium natural gemstones.
+                    </p>
+                    <p class="legacy-text">
+                        Every gem in our collection is ethically sourced from local alluvial mines in Ratnapura and meticulously hand-cut by master lapidarists. In our Colombo workshops, our veteran goldsmiths forge high-purity gold into custom creations that blend old-world Sri Lankan design with contemporary global sophistication.
+                    </p>
+                    
+                    <div class="legacy-stats">
+                        <div class="stat-item">
+                            <p class="stat-number">1942</p>
+                            <p class="stat-label">Founded</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">80+</p>
+                            <p class="stat-label">Years Heritage</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number">100%</p>
+                            <p class="stat-label">Certified Natural</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Showcase Banner --- -->
+    <section class="showcase-banner">
+        <div class="container">
+            <h2 class="showcase-banner-title">Natural Ceylon Sapphires</h2>
+            <p class="showcase-banner-text">
+                Sri Lanka yields the world's most desirable corundum. From the breathtaking Royal Blue Sapphire and Cornflower Blue to rare Padparadscha and fancy yellow sapphires, we curate top-tier specimens with certified authenticity.
+            </p>
+            <a href="#collections" class="btn btn-outline" style="border-color: var(--gold-primary); color: var(--gold-primary);">View Sapphire Catalog</a>
+        </div>
+    </section>
+
+    <!-- --- Collections Showcase Section --- -->
+    <section class="collections" id="collections">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+                <span class="section-pretitle">THE SHOWROOM</span>
+                <h2 class="section-title">Our Masterpiece Catalog</h2>
+            </div>
+            
+            <div class="collections-controls">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="Gemstones">Natural Gemstones</button>
+                    <button class="filter-btn" data-filter="Jewellery">Handmade Jewellery</button>
+                </div>
+                
+                <div class="search-sort-bar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" placeholder="Search by name, origin or gemstone cut...">
+                    </div>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="default">Sort: Recommended</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                        <option value="carat-desc">Carat: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="catalog-grid" id="catalogGrid">
+                <!-- Products dynamically rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Contact Section --- -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <span class="section-pretitle">CONNECT WITH US</span>
+                        <h2 class="section-title">Schedule a Private Showing</h2>
+                    </div>
+                    
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                        Whether seeking a loose collector gem, customizing an engagement ring, or arranging a export wholesale shipment, our specialists are ready to consult you.
+                    </p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="contact-method-details">
+                            <h4>Boutique Address</h4>
+                            <p>385, Galle Road, Colombo, Sri Lanka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-method-details">
+                            <h4>Email Correspondence</h4>
+                            <p><a href="mailto:esmthaha@hotmail.com">esmthaha@hotmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="contact-method-details">
+                            <h4>Hours of Operation</h4>
+                            <p>Always Open (Appointment Recommended)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" onsubmit="handleInquirySubmit(event)">
+                        <input type="hidden" id="inquirySourceItem" value="General Inquiry">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientName">Full Name</label>
+                                <input type="text" id="clientName" required placeholder="Lord/Lady Sterling">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientEmail">Email Address</label>
+                                <input type="email" id="clientEmail" required placeholder="sterling@luxury.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clientPhone">WhatsApp / Phone</label>
+                                <input type="tel" id="clientPhone" required placeholder="+44 7911 123456">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiryType">Inquiry Subject</label>
+                                <select id="inquiryType">
+                                    <option value="Bespoke Design">Bespoke Jewelry Customization</option>
+                                    <option value="Loose Gemstone Purchase">Loose Gemstone Purchase</option>
+                                    <option value="Private Viewing Appointment">Private Colombo Viewing</option>
+                                    <option value="Wholesale Export">Wholesale Export Options</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientMessage">Message Detail</label>
+                            <textarea id="clientMessage" rows="5" required placeholder="Describe your dream jewel design or request certification reports..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Private Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Footer --- -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Precious Gems Co.</h3>
+                    <p>Manufacturers & Exporters of Natural Gemstones and Fine Handmade Jewellery since 1942. Based in Colombo, Sri Lanka.</p>
+                    <div class="footer-socials">
+                        <a href="https://facebook.com/PreciousGemsCompany" target="_blank" rel="noopener" class="social-link" title="Follow us on Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Boutique Collections</h4>
+                    <ul>
+                        <li><a href="#collections" onclick="setCategoryFilter('Gemstones')">Certified Sapphires</a></li>
+                        <li><a href="#collections" onclick="setCategoryFilter('Gemstones')">Natural Rubies</a></li>
+                        <li><a href="#collections" onclick="setCategoryFilter('Jewellery')">Star Rings Set</a></li>
+                        <li><a href="#collections" onclick="setCategoryFilter('Jewellery')">Bespoke Necklaces</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Heritage & Company</h4>
+                    <ul>
+                        <li><a href="#legacy">Our Story since 1942</a></li>
+                        <li><a href="#legacy">Ethical Sourcing Policy</a></li>
+                        <li><a href="#contact">Private Appointments</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><span id="copyrightSymbol" style="cursor: default;">&copy;</span> 2026 Precious Gems Company. Colombo, Sri Lanka. All Rights Reserved.</p>
+                <p>Designed with Luxury & Craftsmanship.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- PRODUCT DETAILS MODAL --- -->
+    <div class="modal" id="productModal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeProductModal()" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="details-grid" id="modalProductDetails">
+                <!-- Modal details rendered dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN VAULT AUTH MODAL --- -->
+    <div class="modal" id="vaultModal">
+        <div class="modal-overlay" onclick="closeVaultModal()"></div>
+        <div class="modal-content vault-modal">
+            <button class="modal-close-btn" onclick="closeVaultModal()" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="vault-content">
+                <div class="vault-icon"><i class="fa-solid fa-vault"></i></div>
+                <h3 class="vault-title font-title">Admin Vault Access</h3>
+                <p class="vault-subtitle">Enter passphrase to access catalog dashboard</p>
+                
+                <form onsubmit="handleVaultAuth(event)">
+                    <div class="vault-input-group">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="vaultPassphrase" required placeholder="••••••••" autocomplete="current-password">
+                    </div>
+                    <div class="vault-error" id="vaultError">Incorrect Passphrase. Please try again.</div>
+                    <button type="submit" class="btn btn-primary vault-submit-btn">Unlock Vault</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN DASHBOARD OVERLAY --- -->
+    <div class="admin-dashboard-overlay" id="adminDashboard">
+        <div class="admin-header">
+            <div class="admin-title-box">
+                <i class="fa-solid fa-gem"></i>
+                <h2 class="admin-title">Precious Gems Company Admin Console</h2>
+            </div>
+            <div class="admin-header-actions">
+                <button class="admin-logout-btn" onclick="logoutAdmin()">Logout</button>
+            </div>
+        </div>
+        
+        <div class="admin-content">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="admin-stat-data">
+                        <h5>Total Collection</h5>
+                        <p id="statTotalItems">0 Items</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <div class="admin-stat-data">
+                        <h5>Client Inquiries</h5>
+                        <p id="statTotalInquiries">0 Recs</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="admin-stat-data">
+                        <h5>Security Level</h5>
+                        <p>High</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="admin-stat-data">
+                        <h5>Legacy Age</h5>
+                        <p>84 Years</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab Menu -->
+            <div class="admin-tabs-nav">
+                <button class="admin-tab-btn active" onclick="switchAdminTab('productsTab')">Manage Collection</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('inquiriesTab')">Client Inquiries</button>
+                <button class="admin-tab-btn" onclick="switchAdminTab('settingsTab')">Database Backup</button>
+            </div>
+            
+            <!-- Products Panel -->
+            <div class="admin-tab-pane active" id="productsTab">
+                <div class="admin-pane-header">
+                    <h3 class="admin-pane-title">Store Inventory</h3>
+                    <div class="admin-pane-actions">
+                        <button class="admin-btn admin-btn-gold" onclick="openAddProductModal()"><i class="fa-solid fa-plus"></i> Add Gem/Jewel</button>
+                    </div>
+                </div>
+                
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;">Media</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Specs (Carat / Origin)</th>
+                                <th>Price</th>
+                                <th style="width: 120px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Inquiries Panel -->
+            <div class="admin-tab-pane" id="inquiriesTab">
+                <div class="admin-pane-header">
+                    <h3 class="admin-pane-title">Client Messages</h3>
+                    <div class="admin-pane-actions">
+                        <button class="admin-btn admin-btn-outline" onclick="clearAllInquiries()"><i class="fa-solid fa-trash-can"></i> Purge All Inquiries</button>
+                    </div>
+                </div>
+                
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Sender Information</th>
+                                <th>Interest Item</th>
+                                <th>Message Detail</th>
+                                <th style="width: 120px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminInquiriesTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Settings & Backup Panel -->
+            <div class="admin-tab-pane" id="settingsTab">
+                <div class="admin-pane-header">
+                    <h3 class="admin-pane-title">Database Export & System Restoration</h3>
+                </div>
+                
+                <div class="backup-card">
+                    <h4>Export Backup JSON</h4>
+                    <p>To secure your inventory changes (including uploaded custom images), copy the JSON dump text below. You can save this into a text file or database to restore later.</p>
+                    <textarea class="backup-code-box" id="exportCodeBox" readonly onclick="this.select()"></textarea>
+                    <button class="admin-btn admin-btn-outline" onclick="copyExportCode()"><i class="fa-solid fa-copy"></i> Copy Database String</button>
+                </div>
+
+                <div class="backup-card">
+                    <h4>Import Database JSON</h4>
+                    <p>Paste a previously exported JSON backup database string below to restore all products and inquiries. This will overwrite the current local collection.</p>
+                    <textarea class="backup-code-box" id="importCodeBox" placeholder='Paste JSON database array here...'></textarea>
+                    <button class="admin-btn admin-btn-gold" onclick="importBackupDatabase()"><i class="fa-solid fa-file-import"></i> Restore from JSON</button>
+                </div>
+                
+                <div class="backup-card" style="border-color: rgba(224, 17, 95, 0.4);">
+                    <h4 style="color: var(--ruby-red);">Emergency Factory Reset</h4>
+                    <p>Reset your client local database to the pristine default showroom gems (Royal Ceylon Sapphire, Star Diamond Ring, Pigeon Blood Ruby, etc.). All custom items, file uploads, and logged client inquiries will be wiped.</p>
+                    <button class="admin-btn" style="background-color: var(--ruby-red); color: #ffffff;" onclick="factoryResetDatabase()"><i class="fa-solid fa-triangle-exclamation"></i> Factory Reset Database</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN ADD/EDIT PRODUCT MODAL (POPUP IN DASHBOARD) --- -->
+    <div class="modal" id="productFormModal">
+        <div class="modal-overlay" onclick="closeProductFormModal()"></div>
+        <div class="modal-content form-modal">
+            <button class="modal-close-btn" onclick="closeProductFormModal()" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 3rem;">
+                <h3 class="vault-title" id="formModalTitle" style="text-align: left; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">Add New Collection Gem</h3>
+                
+                <form id="productForm" onsubmit="handleProductFormSubmit(event)">
+                    <input type="hidden" id="formProductId">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formProductName">Gem / Jewellery Title</label>
+                            <input type="text" id="formProductName" required placeholder="Ceylon Pink Sapphire Ring">
+                        </div>
+                        <div class="form-group">
+                            <label for="formProductCategory">Category Type</label>
+                            <select id="formProductCategory" required>
+                                <option value="Gemstones">Natural Gemstones</option>
+                                <option value="Jewellery">Handmade Jewellery</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formProductPrice">Display Price (e.g. £2,400 or Inquire)</label>
+                            <input type="text" id="formProductPrice" required placeholder="Price Upon Request">
+                        </div>
+                        <div class="form-group">
+                            <label for="formProductCarat">Carat Weight / Gold Karat</label>
+                            <input type="text" id="formProductCarat" required placeholder="3.50 ct">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formProductCut">Cut / Shape Style</label>
+                            <input type="text" id="formProductCut" required placeholder="Emerald Step Cut">
+                        </div>
+                        <div class="form-group">
+                            <label for="formProductColor">Color & Clarity grade</label>
+                            <input type="text" id="formProductColor" required placeholder="Vivid Pink, Eye Clean">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formProductOrigin">Source Origin / Atelier location</label>
+                            <input type="text" id="formProductOrigin" required placeholder="Ratnapura, Sri Lanka">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Illustration</label>
+                            <div class="upload-input-row">
+                                <div class="file-upload-wrapper">
+                                    <button type="button" class="file-upload-btn"><i class="fa-solid fa-upload"></i> Upload Image</button>
+                                    <input type="file" id="formProductFile" accept="image/*" onchange="processLocalImageFile(this)">
+                                </div>
+                                <input type="text" id="formProductImageUrl" placeholder="Or paste image web URL" oninput="previewWebUrlImage(this.value)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Thumbnail Preview</label>
+                        <div class="image-preview-box" id="formImagePreviewBox">
+                            No Image Selected
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formProductDesc">Detailed Story & Specifications Description</label>
+                        <textarea id="formProductDesc" rows="4" required placeholder="This gemstone is hand-sourced, displaying magnificent saturation..."></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button type="button" class="btn btn-outline" style="flex: 1; text-align: center;" onclick="closeProductFormModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary" style="flex: 1; text-align: center;" id="formSubmitBtn">Save Catalog Item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- JavaScript Program Logic --- -->
+    <script>
+        // --- 1. DEFAULT DATA DEFINITIONS ---
+        const defaultGemsDatabase = [
+            {
+                id: "gem-1",
+                name: "Royal Ceylon Blue Sapphire",
+                category: "Gemstones",
+                price: "Price Upon Request",
+                carat: "4.82 ct",
+                cut: "Cushion Brilliant",
+                color: "Deep Royal Blue",
+                origin: "Ratnapura, Sri Lanka",
+                description: "An exceptional natural Ceylon Sapphire showcasing a highly coveted royal blue hue with superb clarity and brilliance. Ethically mined and custom-cut to maximize light return.",
+                image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: "gem-2",
+                name: "Classic Star Diamond Set",
+                category: "Jewellery",
+                price: "£4,250",
+                carat: "1.85 ct (total)",
+                cut: "Round Brilliant & Custom Star",
+                color: "E/F Color, VS1",
+                origin: "Handmade in Colombo",
+                description: "Inspired by celestial aesthetics, this matching 18k yellow gold set features a star-shaped ring, pendant necklace, and matching earrings, adorned with hand-set brilliant-cut diamonds.",
+                image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: "gem-3",
+                name: "Imperial Cushion-Cut Ruby",
+                category: "Gemstones",
+                price: "Price Upon Request",
+                carat: "3.15 ct",
+                cut: "Oval Mixed",
+                color: "Vibrant Pigeon Blood Red",
+                origin: "Sourced from Sri Lanka",
+                description: "A rare and highly saturated natural ruby exhibiting the famous pigeon-blood red color. Unheated and certified, this gemstone represents the pinnacle of luxury investment-grade rubies.",
+                image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: "gem-4",
+                name: "Pear-Shaped Diamond Pendant",
+                category: "Jewellery",
+                price: "£6,800",
+                carat: "2.40 ct",
+                cut: "Pear Mixed & Pavé",
+                color: "G Color, VVS2",
+                origin: "Handcrafted Sri Lanka",
+                description: "An elegant teardrop-shaped pendant featuring a central pear-shaped Ceylon sapphire haloed by brilliant-cut diamonds, suspended from a delicate 18k white gold chain.",
+                image: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: "gem-5",
+                name: "Vintage Filigree Gold Bangle",
+                category: "Jewellery",
+                price: "£3,100",
+                carat: "22 Karat Gold",
+                cut: "Exquisite Hand-Engraved",
+                color: "Deep Yellow Gold",
+                origin: "Handmade Ceylon",
+                description: "A traditional Sri Lankan masterpiece. Handcrafted from solid 22k gold, this bangle features intricate filigree wire work and hand-engravings, showcasing a legacy of goldsmithing since 1942.",
+                image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: "gem-6",
+                name: "Rare Emerald-Cut Green Beryl",
+                category: "Gemstones",
+                price: "£2,450",
+                carat: "6.20 ct",
+                cut: "Emerald Cut",
+                color: "Vibrant Mint Green",
+                origin: "Sri Lanka",
+                description: "A stunning emerald-cut green beryl (emerald family) with exceptional transparency and a fresh mint green tint. Its clean step-cut facets highlight the gemstone's flawless crystal structure.",
+                image: "https://images.unsplash.com/photo-1615655404746-8f030bc25763?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // --- 2. GLOBAL STATE ---
+        let products = [];
+        let inquiries = [];
+        let currentFilter = 'all';
+        let currentSort = 'default';
+        let loadedBase64Image = '';
+
+        // --- 3. DATABASE INITIALIZATION ---
+        function initDatabase() {
+            // Load products from LocalStorage or initialize with defaults
+            const savedProducts = localStorage.getItem('precious_gems_products');
+            if (savedProducts) {
+                products = JSON.parse(savedProducts);
+            } else {
+                products = [...defaultGemsDatabase];
+                localStorage.setItem('precious_gems_products', JSON.stringify(products));
+            }
+
+            // Load inquiries from LocalStorage
+            const savedInquiries = localStorage.getItem('precious_gems_inquiries');
+            if (savedInquiries) {
+                inquiries = JSON.parse(savedInquiries);
+            } else {
+                inquiries = [];
+                localStorage.setItem('precious_gems_inquiries', JSON.stringify(inquiries));
+            }
+        }
+
+        // --- 4. CATALOGUE RENDERING & BEHAVIOR ---
+        function renderShowroomCatalog() {
+            const catalogGrid = document.getElementById('catalogGrid');
+            catalogGrid.innerHTML = '';
+
+            // Filter items
+            let filtered = products.filter(item => {
+                if (currentFilter !== 'all' && item.category !== currentFilter) {
+                    return false;
+                }
+                
+                // Search term match
+                const searchVal = document.getElementById('searchInput').value.toLowerCase();
+                if (searchVal) {
+                    const matchName = item.name.toLowerCase().includes(searchVal);
+                    const matchOrigin = item.origin.toLowerCase().includes(searchVal);
+                    const matchCut = item.cut.toLowerCase().includes(searchVal);
+                    const matchDesc = item.description.toLowerCase().includes(searchVal);
+                    return matchName || matchOrigin || matchCut || matchDesc;
+                }
+                
+                return true;
+            });
+
+            // Sort items
+            if (currentSort === 'name-asc') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (currentSort === 'name-desc') {
+                filtered.sort((a, b) => b.name.localeCompare(a.name));
+            } else if (currentSort === 'carat-desc') {
+                // Parse float from carat string (e.g. "4.82 ct" -> 4.82)
+                const getCarats = (str) => parseFloat(str) || 0;
+                filtered.sort((a, b) => getCarats(b.carat) - getCarats(a.carat));
+            }
+
+            // Render catalog
+            if (filtered.length === 0) {
+                catalogGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-gem"></i>
+                        <h3>No Masterpieces Found</h3>
+                        <p>Adjust your search criteria or filter category to discover our collection.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="card-image-box">
+                        <img src="${item.image || 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80'}" alt="${item.name}" class="card-image" loading="lazy">
+                        <span class="card-badge">${item.category}</span>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="card-title">${item.name}</h3>
+                        <div class="card-specs">
+                            <span class="spec-tag">${item.carat}</span>
+                            <span class="spec-tag">${item.cut}</span>
+                            <span class="spec-tag">${item.origin.split(',')[0]}</span>
+                        </div>
+                        <p class="card-price">${item.price}</p>
+                        <div class="card-actions">
+                            <button class="card-btn card-btn-outline" onclick="openProductDetails('${item.id}')">View Details</button>
+                            <button class="card-btn card-btn-primary" onclick="triggerDirectInquiry('${item.name}')">Inquire</button>
+                        </div>
+                    </div>
+                `;
+                catalogGrid.appendChild(card);
+            });
+        }
+
+        // --- 5. PRODUCT DETAILS MODAL ---
+        function openProductDetails(id) {
+            const item = products.find(p => p.id === id);
+            if (!item) return;
+
+            const detailModalBody = document.getElementById('modalProductDetails');
+            detailModalBody.innerHTML = `
+                <div class="details-image-box">
+                    <img src="${item.image || 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80'}" alt="${item.name}" class="details-image">
+                </div>
+                <div class="details-info">
+                    <span class="details-category">${item.category}</span>
+                    <h2 class="details-title">${item.name}</h2>
+                    <p class="details-price">${item.price}</p>
+                    
+                    <h4 class="details-desc-title">Description</h4>
+                    <p class="details-desc">${item.description}</p>
+                    
+                    <h4 class="details-desc-title">Specifications</h4>
+                    <table class="details-specs-table">
+                        <tr>
+                            <td class="spec-label">Weight / Metal</td>
+                            <td class="spec-val">${item.carat}</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Facet Cut</td>
+                            <td class="spec-val">${item.cut}</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Grade / Hue</td>
+                            <td class="spec-val">${item.color}</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Gem Origin</td>
+                            <td class="spec-val">${item.origin}</td>
+                        </tr>
+                    </table>
+                    
+                    <button class="btn btn-primary details-inquire-btn" onclick="triggerDirectInquiry('${item.name}'); closeProductModal();">Acquisition Inquiry</button>
+                </div>
+            `;
+            
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // --- 6. CLIENT INQUIRIES ---
+        function triggerDirectInquiry(itemName) {
+            // Scroll to contact form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            
+            // Focus and populate message
+            document.getElementById('inquirySourceItem').value = itemName;
+            document.getElementById('inquiryType').value = 'Loose Gemstone Purchase';
+            document.getElementById('clientMessage').value = `Greetings Precious Gems Co.,\n\nI am highly interested in acquiring the "${itemName}" from your luxury showcase catalog. Please share certification details, pricing/shipping details to my address, and potential availability for a private boutique showing.`;
+            document.getElementById('clientName').focus();
+        }
+
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            
+            const newInquiry = {
+                id: 'inq-' + Date.now(),
+                senderName: document.getElementById('clientName').value,
+                senderEmail: document.getElementById('clientEmail').value,
+                senderPhone: document.getElementById('clientPhone').value,
+                subject: document.getElementById('inquiryType').value,
+                interestItem: document.getElementById('inquirySourceItem').value,
+                message: document.getElementById('clientMessage').value,
+                date: new Date().toLocaleDateString('en-GB') + ' ' + new Date().toLocaleTimeString('en-GB', {hour: '2-digit', minute:'2-digit'})
+            };
+
+            inquiries.push(newInquiry);
+            localStorage.setItem('precious_gems_inquiries', JSON.stringify(inquiries));
+            
+            // Show toast success
+            showToastAlert('Inquiry sent! Our gemologist will contact you shortly via email/phone.');
+            
+            // Reset contact form
+            document.getElementById('contactForm').reset();
+            document.getElementById('inquirySourceItem').value = "General Inquiry";
+        }
+
+        // --- 7. ADMIN VAULT AUTHENTICATION ---
+        function openVaultModal() {
+            document.getElementById('vaultModal').classList.add('active');
+            document.getElementById('vaultPassphrase').focus();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVaultModal() {
+            document.getElementById('vaultModal').classList.remove('active');
+            document.getElementById('vaultError').style.display = 'none';
+            document.getElementById('vaultPassphrase').value = '';
+            document.body.style.overflow = '';
+        }
+
+        function handleVaultAuth(event) {
+            event.preventDefault();
+            const pass = document.getElementById('vaultPassphrase').value;
+            
+            // Authentic secure year code
+            if (pass === 'gems1942' || pass === 'gems123' || pass === 'admin123') {
+                closeVaultModal();
+                openAdminConsole();
+            } else {
+                document.getElementById('vaultError').style.display = 'block';
+            }
+        }
+
+        // --- 8. ADMIN CONSOLE CONTROL PANEL ---
+        function openAdminConsole() {
+            document.getElementById('adminDashboard').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Load tables
+            renderAdminProductsTable();
+            renderAdminInquiriesTable();
+            updateAdminDashboardStats();
+            generateBackupExportCode();
+        }
+
+        function logoutAdmin() {
+            document.getElementById('adminDashboard').classList.remove('active');
+            document.body.style.overflow = '';
+            showToastAlert('Admin session locked successfully.');
+        }
+
+        function updateAdminDashboardStats() {
+            document.getElementById('statTotalItems').textContent = `${products.length} Gems`;
+            document.getElementById('statTotalInquiries').textContent = `${inquiries.length} Recs`;
+        }
+
+        function switchAdminTab(paneId) {
+            // Update tabs nav
+            const tabs = document.querySelectorAll('.admin-tab-btn');
+            tabs.forEach(btn => btn.classList.remove('active'));
+            
+            // Highlight clicked
+            event.currentTarget.classList.add('active');
+            
+            // Update panels
+            const panes = document.querySelectorAll('.admin-tab-pane');
+            panes.forEach(pane => pane.classList.remove('active'));
+            document.getElementById(paneId).classList.add('active');
+        }
+
+        // RENDER PRODUCTS
+        function renderAdminProductsTable() {
+            const tbody = document.getElementById('adminProductsTableBody');
+            tbody.innerHTML = '';
+            
+            if (products.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 2rem;">No items in collection. Click Add Gem to create.</td></tr>`;
+                return;
+            }
+
+            products.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <img src="${item.image || 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=60&q=80'}" alt="Thumb" class="admin-table-img">
+                    </td>
+                    <td>
+                        <div class="admin-table-title">${item.name}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted);">ID: ${item.id}</div>
+                    </td>
+                    <td>${item.category}</td>
+                    <td>
+                        <div><strong>Weight:</strong> ${item.carat}</div>
+                        <div><strong>Origin:</strong> ${item.origin.split(',')[0]}</div>
+                    </td>
+                    <td><strong style="color: var(--gold-primary); font-family: 'Cinzel', serif;">${item.price}</strong></td>
+                    <td>
+                        <div class="admin-table-actions">
+                            <button class="admin-action-btn admin-action-edit" onclick="openEditProductModal('${item.id}')" title="Edit Gem"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="admin-action-btn admin-action-delete" onclick="deleteProductItem('${item.id}')" title="Delete Gem"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // RENDER INQUIRIES
+        function renderAdminInquiriesTable() {
+            const tbody = document.getElementById('adminInquiriesTableBody');
+            tbody.innerHTML = '';
+            
+            if (inquiries.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; padding: 2rem;">No inquiries received yet.</td></tr>`;
+                return;
+            }
+
+            inquiries.forEach(inq => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <div class="inquiry-sender">${inq.senderName}</div>
+                        <div class="inquiry-meta"><i class="fa-solid fa-envelope"></i> ${inq.senderEmail}</div>
+                        <div class="inquiry-meta"><i class="fa-solid fa-phone"></i> ${inq.senderPhone}</div>
+                        <div class="inquiry-meta"><i class="fa-solid fa-clock"></i> ${inq.date}</div>
+                    </td>
+                    <td>
+                        <strong style="color: var(--gold-primary);">${inq.interestItem}</strong>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Subject: ${inq.subject}</div>
+                    </td>
+                    <td>
+                        <div class="inquiry-msg">${inq.message}</div>
+                    </td>
+                    <td>
+                        <div class="admin-table-actions" style="justify-content: center;">
+                            <a href="mailto:${inq.senderEmail}?subject=Re: Inquiry regarding ${inq.interestItem}" class="admin-action-btn admin-action-reply" title="Reply via Email"><i class="fa-solid fa-reply"></i></a>
+                            <button class="admin-action-btn admin-action-delete" onclick="deleteInquiryItem('${inq.id}')" title="Delete Inquiry"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // DELETE PRODUCT
+        function deleteProductItem(id) {
+            if (confirm('Are you absolutely sure you want to delete this gemstone/jewellery card from showroom display?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('precious_gems_products', JSON.stringify(products));
+                
+                renderAdminProductsTable();
+                updateAdminDashboardStats();
+                generateBackupExportCode();
+                renderShowroomCatalog();
+                showToastAlert('Store item deleted successfully.');
+            }
+        }
+
+        // DELETE INQUIRY
+        function deleteInquiryItem(id) {
+            if (confirm('Delete this client message record?')) {
+                inquiries = inquiries.filter(i => i.id !== id);
+                localStorage.setItem('precious_gems_inquiries', JSON.stringify(inquiries));
+                
+                renderAdminInquiriesTable();
+                updateAdminDashboardStats();
+                showToastAlert('Inquiry log deleted.');
+            }
+        }
+
+        function clearAllInquiries() {
+            if (confirm('DANGER! Are you sure you want to delete ALL inquiries forever? This cannot be undone.')) {
+                inquiries = [];
+                localStorage.setItem('precious_gems_inquiries', JSON.stringify(inquiries));
+                renderAdminInquiriesTable();
+                updateAdminDashboardStats();
+                showToastAlert('Inquiry catalog purged.');
+            }
+        }
+
+        // --- 9. ADMIN ADD/EDIT DIALOG FORMS ---
+        function openAddProductModal() {
+            document.getElementById('productForm').reset();
+            document.getElementById('formProductId').value = '';
+            document.getElementById('formModalTitle').textContent = 'Add New Collection Gem/Jewel';
+            document.getElementById('formImagePreviewBox').innerHTML = 'No Image Selected';
+            document.getElementById('formSubmitBtn').textContent = 'Save Catalog Item';
+            loadedBase64Image = '';
+            
+            document.getElementById('productFormModal').classList.add('active');
+        }
+
+        function openEditProductModal(id) {
+            const item = products.find(p => p.id === id);
+            if (!item) return;
+
+            document.getElementById('formProductId').value = item.id;
+            document.getElementById('formProductName').value = item.name;
+            document.getElementById('formProductCategory').value = item.category;
+            document.getElementById('formProductPrice').value = item.price;
+            document.getElementById('formProductCarat').value = item.carat;
+            document.getElementById('formProductCut').value = item.cut;
+            document.getElementById('formProductColor').value = item.color;
+            document.getElementById('formProductOrigin').value = item.origin;
+            document.getElementById('formProductImageUrl').value = item.image.startsWith('data:') ? '' : item.image;
+            document.getElementById('formProductDesc').value = item.description;
+            
+            loadedBase64Image = item.image.startsWith('data:') ? item.image : '';
+            
+            // Show preview
+            document.getElementById('formImagePreviewBox').innerHTML = `<img src="${item.image}" alt="Preview">`;
+            document.getElementById('formModalTitle').textContent = 'Edit Collection Gem Details';
+            document.getElementById('formSubmitBtn').textContent = 'Save Changes';
+
+            document.getElementById('productFormModal').classList.add('active');
+        }
+
+        function closeProductFormModal() {
+            document.getElementById('productFormModal').classList.remove('active');
+        }
+
+        // FILE READ FOR BASE64 LOCAL UPLOADS
+        function processLocalImageFile(input) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    loadedBase64Image = e.target.result;
+                    document.getElementById('formImagePreviewBox').innerHTML = `<img src="${loadedBase64Image}" alt="Preview">`;
+                    document.getElementById('formProductImageUrl').value = ''; // Clear URL if file uploaded
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewWebUrlImage(url) {
+            if (url.trim()) {
+                loadedBase64Image = ''; // Clear base64 upload
+                document.getElementById('formImagePreviewBox').innerHTML = `<img src="${url}" alt="Preview">`;
+            } else {
+                document.getElementById('formImagePreviewBox').innerHTML = 'No Image Selected';
+            }
+        }
+
+        // PRODUCT FORM SUBMIT
+        function handleProductFormSubmit(event) {
+            event.preventDefault();
+            
+            const id = document.getElementById('formProductId').value;
+            const name = document.getElementById('formProductName').value;
+            const category = document.getElementById('formProductCategory').value;
+            const price = document.getElementById('formProductPrice').value;
+            const carat = document.getElementById('formProductCarat').value;
+            const cut = document.getElementById('formProductCut').value;
+            const color = document.getElementById('formProductColor').value;
+            const origin = document.getElementById('formProductOrigin').value;
+            const webUrl = document.getElementById('formProductImageUrl').value;
+            const description = document.getElementById('formProductDesc').value;
+
+            // Final Image Choice: Base64 data OR web URL, default fallback placeholder
+            let finalImage = loadedBase64Image || webUrl || 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80';
+
+            if (id) {
+                // EDIT EXISTING
+                const index = products.findIndex(p => p.id === id);
+                if (index !== -1) {
+                    products[index] = {
+                        id, name, category, price, carat, cut, color, origin, description, image: finalImage
+                    };
+                }
+            } else {
+                // ADD NEW
+                const newId = 'gem-' + Date.now();
+                products.push({
+                    id: newId, name, category, price, carat, cut, color, origin, description, image: finalImage
+                });
+            }
+
+            // Save and Sync
+            localStorage.setItem('precious_gems_products', JSON.stringify(products));
+            closeProductFormModal();
+            renderAdminProductsTable();
+            updateAdminDashboardStats();
+            generateBackupExportCode();
+            renderShowroomCatalog();
+            
+            showToastAlert(id ? 'Product specifications updated!' : 'New gem added to catalog!');
+        }
+
+        // --- 10. DATABASE BACKUPS & FACTORY RESTORATION ---
+        function generateBackupExportCode() {
+            const db = {
+                products: products,
+                inquiries: inquiries
+            };
+            document.getElementById('exportCodeBox').value = JSON.stringify(db);
+        }
+
+        // Copy backup string to clipboard
+        function copyExportCode() {
+            const textarea = document.getElementById('exportCodeBox');
+            textarea.select();
+            
+            // Clipboard API usage
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textarea.value)
+                    .then(() => showToastAlert('Database backup string copied to clipboard!'))
+                    .catch(() => showToastAlert('Clipboard failed. Manually copy the selected text.'));
+            } else {
+                document.execCommand('copy');
+                showToastAlert('Database backup string copied to clipboard!');
+            }
+        }
+
+        function importBackupDatabase() {
+            const code = document.getElementById('importCodeBox').value.trim();
+            if (!code) {
+                alert('Please paste a backup string first.');
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(code);
+                if (parsed.products && Array.isArray(parsed.products)) {
+                    products = parsed.products;
+                    localStorage.setItem('precious_gems_products', JSON.stringify(products));
+                    
+                    if (parsed.inquiries && Array.isArray(parsed.inquiries)) {
+                        inquiries = parsed.inquiries;
+                        localStorage.setItem('precious_gems_inquiries', JSON.stringify(inquiries));
+                    }
+                    
+                    // Sync
+                    renderAdminProductsTable();
+                    renderAdminInquiriesTable();
+                    updateAdminDashboardStats();
+                    generateBackupExportCode();
+                    renderShowroomCatalog();
+                    
+                    document.getElementById('importCodeBox').value = '';
+                    showToastAlert('Database backup successfully restored!');
+                } else {
+                    alert('Invalid database format. Must contain a products array.');
+                }
+            } catch (e) {
+                alert('Parsing failed. Ensure the pasted string is correct JSON.');
+            }
+        }
+
+        function factoryResetDatabase() {
+            if (confirm('DANGER! This action will delete all custom uploaded gems, file uploads, and logged client inquiries, reverting back to the defaults. Proceed?')) {
+                localStorage.removeItem('precious_gems_products');
+                localStorage.removeItem('precious_gems_inquiries');
+                
+                initDatabase();
+                
+                // Sync
+                renderAdminProductsTable();
+                renderAdminInquiriesTable();
+                updateAdminDashboardStats();
+                generateBackupExportCode();
+                renderShowroomCatalog();
+                
+                showToastAlert('Showroom database reset to defaults.');
+            }
+        }
+
+        // --- 11. GENERAL UTILITIES (ALERTS, FILTER, SORT, THEME) ---
+        function showToastAlert(message) {
+            const toast = document.getElementById('alertToast');
+            document.getElementById('alertMessage').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Filter Set
+        function setCategoryFilter(category) {
+            currentFilter = category;
+            
+            // Highlight Tab
+            const tabs = document.querySelectorAll('.filter-btn');
+            tabs.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                }
+            });
+
+            renderShowroomCatalog();
+        }
+
+        // Light/Dark Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Initial Theme Check
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            
+            if (isLight) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+
+        // Mobile Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+
+        function closeMobileMenu() {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').className = 'fa-solid fa-bars';
+        }
+
+        // Hook Page Filters
+        document.getElementById('filterTabs').addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                const tabs = document.querySelectorAll('.filter-btn');
+                tabs.forEach(btn => btn.classList.remove('active'));
+                
+                e.target.classList.add('active');
+                currentFilter = e.target.getAttribute('data-filter');
+                renderShowroomCatalog();
+            }
+        });
+
+        document.getElementById('searchInput').addEventListener('input', () => {
+            renderShowroomCatalog();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderShowroomCatalog();
+        });
+
+        // Page Scroll Navigation Highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Hidden Admin Trigger: URL hash
+        window.addEventListener('hashchange', checkUrlHash);
+        function checkUrlHash() {
+            if (window.location.hash === '#admin') {
+                openVaultModal();
+                // Clear hash without reload
+                history.replaceState("", document.title, window.location.pathname + window.location.search);
+            }
+        }
+
+        // Hidden Admin Trigger: Double click logo
+        const mainLogo = document.getElementById('mainLogo');
+        if (mainLogo) {
+            mainLogo.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                openVaultModal();
+            });
+        }
+
+        // Hidden Admin Trigger: 5 clicks on copyright symbol
+        const copyrightSymbol = document.getElementById('copyrightSymbol');
+        let copyrightClickCount = 0;
+        if (copyrightSymbol) {
+            copyrightSymbol.addEventListener('click', () => {
+                copyrightClickCount++;
+                if (copyrightClickCount >= 5) {
+                    copyrightClickCount = 0;
+                    openVaultModal();
+                }
+            });
+        }
+
+        // Initial Boot
+        window.onload = function() {
+            initDatabase();
+            renderShowroomCatalog();
+            checkUrlHash();
+        };
+    </script>
+</body>
+</html>
